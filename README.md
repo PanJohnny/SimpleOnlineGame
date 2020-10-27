@@ -1,6 +1,8 @@
 # SimpleOnlineGame
-this is just peace of software you can use on your own, you will figure out what is happening
-
+this is just peace of software you can use on your own, you will figure out what is happening <br>
+oh i forgot to mention if you type something in console of client it will get send to other clients <br>
+if you type in console exit it will shut down client <br>
+### Disclaimer: If you start server i dont provide option to stop it so you must terminate the process!!!
 ## ClientSideProject
 ### Client
 Basically main class that will start game and load all these things
@@ -22,6 +24,8 @@ Really crappy class that somehow works (I am handling players and rendering from
 ### InputManager
 the left arrow key doesnt work
 ### Packet
+#### TextMessagePacket
+so basically  if you type something in console it will get send to other people
 #### PlayerJoinPacket
 oh player joined lets register his uuid
 #### PlayerLeavePacket
