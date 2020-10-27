@@ -37,3 +37,13 @@ let me use your ServerSocket on localhost!
 this is peace of crap but it resends packets and do stuff like that
 ### Packet
 #### Same as CLientSideProject
+## How to use this
+- copy paste
+- inspiration
+- copy all of this and add some other things
+### Please fork if you want to copy that!
+- actually this code isnt optimized really but my old crap laptop can handle it so good luck
+### This is how you modify the ip
+1. goto Server.java
+2. bind server socket to another port you can also bind it on another ip default is localhost
+3. if you change port or ip or both goto Client.java and modify Socket
