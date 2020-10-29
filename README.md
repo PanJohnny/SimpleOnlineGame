@@ -22,7 +22,7 @@ Container that contains all info needed for making players
 ### PlayerHandler
 Really crappy class that somehow works (I am handling players and rendering from there)
 ### InputManager
-the left arrow key doesnt work
+handles input from user - arrow keys
 ### Packet
 #### TextMessagePacket
 so basically  if you type something in console it will get send to other people
@@ -30,7 +30,7 @@ so basically  if you type something in console it will get send to other people
 oh player joined lets register his uuid
 #### PlayerLeavePacket
 player left delete him from you list of players
-#### PlayerPositionPacket (i guess this is the name of it)
+#### PlayerLocationPacket
 hey someone moved render him on another spot
 #### PlayerRequestPacket
 hey the guy who moved isnt registered can you just send us his PlayerJoinPacket pls
