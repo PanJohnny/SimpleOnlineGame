@@ -28,8 +28,7 @@ public class InputManager implements KeyListener{
 		}else if(e.getKeyCode() ==KeyEvent.VK_RIGHT) {
 			h.localPlayer.x+=speed;
 			h.client.sen.sendPacket(new PlayerLocationPacket(h.localPlayer.x, h.localPlayer.y,h.localPlayer.uuid));
-		}
-		if(e.getKeyChar()==KeyEvent.VK_LEFT) {
+		}else if(e.getKeyCode()==KeyEvent.VK_LEFT) {
 			h.localPlayer.x-=speed;
 			h.client.sen.sendPacket(new PlayerLocationPacket(h.localPlayer.x, h.localPlayer.y,h.localPlayer.uuid));
 		}

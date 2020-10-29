@@ -19,6 +19,7 @@ public class ServerClient implements Runnable{
 	public boolean reading =true;
 	public Socket socket;
 	private Thread thr;
+	public int x=0, y=0;
 	private ObjectOutputStream out;
 	private ObjectInputStream in;
 	private Server server;	
@@ -102,7 +103,8 @@ public class ServerClient implements Runnable{
 					});
 				}
 				if(p instanceof PlayerLocationPacket) {
-					
+					x=((PlayerLocationPacket)p).getX();
+					y=((PlayerLocationPacket)p).getY();
 					server.clients.forEach(client->{
 						if(client!=this) {
 							client.sendPacket((PlayerLocationPacket)p);
@@ -119,6 +121,7 @@ public class ServerClient implements Runnable{
 						if(prp.uuid.equals(c.uuid)) {
 							System.out.println("getting this pjp: ["+c.myPJP.uuid+"," +c.myPJP.color+"]");
 							sendPacket(c.myPJP);
+							sendPacket(new PlayerLocationPacket(c.x, c.y, c.uuid));
 						}
 					});
 					System.out.print("]");
