@@ -34,17 +34,10 @@ public class Client implements Runnable{
 			pha=new PlayerHandler(this);
 			System.out.println("creating packet reciever");
 			rec = new PacketReciever(in, pha);
-			boolean checking=true;
-			while(checking) {
-				if(sen.uuid!=null) {
-					System.out.println("notnull");
-					pha.start();
-					checking=false;
-				}
-				System.out.println("null");
-			}
-			System.out.println("stopped checking");
 			
+			System.out.println("starting PlayerHandler");
+			pha.start();
+
 		} catch (IOException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.out.println("server stopped");

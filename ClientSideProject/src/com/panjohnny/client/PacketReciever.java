@@ -45,9 +45,10 @@ public class PacketReciever implements Runnable {
 					PlayerLeavePacket packet = (PlayerLeavePacket) p;
 					if(!ha.otherPlayers.isEmpty()) {
 						ha.otherPlayers.forEach(player -> {
-							if(player.uuid==packet.uuid);
-							System.out.println("removing player with uuid: "+player.uuid.toString());
-							ha.otherPlayers.remove(player);
+							if(player.uuid==packet.uuid) {
+								System.out.println("removing player with uuid: "+player.uuid.toString());
+								ha.otherPlayers.remove(player);
+							}
 						});}
 				}
 				if(p instanceof PlayerLocationPacket) {
@@ -81,12 +82,6 @@ public class PacketReciever implements Runnable {
 		}
 		recieving=false;
 		System.out.println("Stopped recieving");
-		try {
-			thr.join(0);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	public void playerNotFound(boolean found) {

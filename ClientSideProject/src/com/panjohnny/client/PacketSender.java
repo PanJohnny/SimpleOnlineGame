@@ -19,6 +19,7 @@ public class PacketSender implements Runnable {
 	public PacketSender(ObjectOutputStream out, Client client) {
 		this.out=out;
 		this.client=client;
+		uuid=UUID.randomUUID();
 		thr=new Thread(this);
 		thr.start();
 	}
@@ -36,7 +37,6 @@ public class PacketSender implements Runnable {
 		// TODO Auto-generated method stub
 		try {
 			Scanner sc = new Scanner(System.in);
-			uuid = UUID.randomUUID();
 			System.out.println("CREATED UUID: "+uuid.toString());
 			out.writeObject(new PlayerJoinPacket(uuid, Color.red));
 			boolean chatting = true;
